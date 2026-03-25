@@ -17,37 +17,44 @@
             min-height: 100vh;
         }
 
-        /* --- AMBIENT GLOWS (Dark Theme Colors) --- */
+        /* --- UPDATED AMBIENT GLOWS (Matching Screenshots) --- */
         .glow-orange {
-            position: absolute;
-            bottom: -10%;
-            left: -10%;
-            width: 60vw;
-            height: 60vh;
-            background: radial-gradient(circle at center, rgba(194, 65, 12, 0.35) 0%, rgba(0,0,0,0) 70%);
-            filter: blur(100px);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .glow-blue {
-            position: absolute;
-            bottom: -15%;
-            right: -10%;
+            position: fixed;
+            bottom: -20%;
+            left: -15%;
             width: 70vw;
             height: 70vh;
-            background: radial-gradient(circle at center, rgba(29, 78, 216, 0.4) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle at center, rgba(255, 69, 0, 0.25) 0%, rgba(0,0,0,0) 70%);
             filter: blur(120px);
             z-index: 0;
             pointer-events: none;
         }
 
-        /* Glassmorphism Navigation (Dark Theme) */
+        .glow-blue {
+            position: fixed;
+            bottom: -20%;
+            right: -15%;
+            width: 70vw;
+            height: 70vh;
+            background: radial-gradient(circle at center, rgba(0, 102, 255, 0.3) 0%, rgba(0,0,0,0) 70%);
+            filter: blur(120px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Glassmorphism Navigation */
         .nav-glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Footer Glass Styling */
+        .footer-glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(24px);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 32px;
         }
 
         /* --- ANIMATIONS --- */
@@ -56,106 +63,56 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Glowing Button Border Effect with Rotating Shine */
         .btn-glow {
             position: relative;
             background: #000;
             border-radius: 9999px;
-            padding: 1.5px;
+            padding: 1px;
             display: inline-block;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
             isolation: isolate;
-        }
-
-        .btn-glow-inner {
-            background: #000;
-            border-radius: 9999px;
-            padding: 8px 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100%;
-            width: 100%;
-            position: relative;
-            z-index: 2;
         }
 
         .btn-glow::before {
             content: '';
             position: absolute;
             inset: -150%; 
-            background: conic-gradient(
-                from 0deg, 
-                transparent 20%, 
-                #f97316 45%, 
-                #3b82f6 55%, 
-                transparent 80%
-            );
-            animation: spin 3s linear infinite;
+            background: conic-gradient(from 0deg, transparent 20%, #ff4500 45%, #0066ff 55%, transparent 80%);
+            animation: spin 4s linear infinite;
             z-index: 1;
-            opacity: 0.5;
+            opacity: 0.6;
         }
 
-        /* Waitlist Button Style */
-        .btn-input-glow-container {
-            position: relative;
-            display: inline-block;
-            padding: 1.5px;
-            border-radius: 12px;
-            overflow: hidden;
+        .btn-glow-inner {
             background: #000;
-            transition: all 0.3s ease;
-        }
-
-        .btn-input-glow-container::before {
-            content: '';
-            position: absolute;
-            inset: -150%;
-            background: conic-gradient(
-                from 0deg,
-                transparent 20%,
-                #f97316 45%,
-                #3b82f6 55%,
-                transparent 80%
-            );
-            animation: spin 3s linear infinite;
-            z-index: 1;
-        }
-
-        .btn-input-glow-inner {
+            border-radius: 9999px;
+            padding: 8px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
             z-index: 2;
-            background: #000;
-            color: #fff;
-            padding: 10px 24px;
-            border-radius: 11px;
-            font-size: 14px;
-            font-weight: 500;
-            display: block;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: background 0.3s ease;
         }
 
-        .btn-input-glow-container:hover {
-            transform: scale(1.02);
-            box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
-        }
-
-        /* Input Container (Dark Theme) */
-        .input-container {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
+        /* Badge Styling */
         .badge-pill {
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             background: rgba(255, 255, 255, 0.03);
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: #ccc;
+            letter-spacing: 0.05em;
+            color: #fff;
+        }
+
+        /* Input Styling */
+        .input-container {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+        }
+
+        /* Social Icons Hover */
+        .social-link:hover {
+            color: #fff;
+            transform: translateY(-2px);
         }
     </style>
 </head>
@@ -167,74 +124,138 @@
 
     <!-- Navigation Menu -->
     <header class="w-full flex justify-center pt-8 px-4 z-20">
-        <nav class="nav-glass px-8 py-2.5 rounded-full flex items-center justify-between w-full max-w-6xl mx-auto">
+        <nav class="nav-glass px-8 py-3 rounded-full flex items-center justify-between w-full max-w-6xl mx-auto border-white/10">
             <div class="flex items-center gap-3 cursor-pointer group">
-                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center group-hover:rotate-[360deg] transition-transform duration-700">
-                    <i data-lucide="asterisk" class="text-black w-5 h-5"></i>
+                <div class="w-9 h-9 bg-gradient-to-br from-blue-500 to-orange-500 rounded-full flex items-center justify-center p-0.5">
+                    <div class="w-full h-full bg-black rounded-full flex items-center justify-center">
+                        <i data-lucide="zap" class="text-white w-5 h-5"></i>
+                    </div>
                 </div>
-                <span class="text-2xl font-bold tracking-tight text-white">Fusion AI</span>
+                <span class="text-xl font-bold tracking-tight text-white">Fusion AI</span>
             </div>
 
-            <div class="hidden md:flex items-center gap-10 text-[13px] text-gray-400 font-bold uppercase tracking-wider">
+            <div class="hidden md:flex items-center gap-8 text-[14px] text-gray-400 font-medium">
                 <a href="#" class="hover:text-white transition-all">About us</a>
                 <a href="#" class="hover:text-white transition-all">Pricing</a>
                 <a href="#" class="hover:text-white transition-all">Integration</a>
                 <a href="#" class="hover:text-white transition-all">Blog</a>
                 <a href="#" class="hover:text-white transition-all">Contact</a>
+                <a href="#" class="hover:text-white transition-all">Waitlist</a>
             </div>
 
             <div class="cursor-pointer group">
                 <div class="btn-glow">
-                    <div class="btn-glow-inner text-sm font-bold uppercase tracking-wide">Sign in</div>
+                    <div class="btn-glow-inner text-sm font-semibold">Get Started</div>
                 </div>
             </div>
         </nav>
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow flex flex-col items-center justify-center text-center px-4 z-10 py-20 w-full max-w-screen-xl mx-auto">
-        <div class="badge-pill px-4 py-1.5 rounded-full text-[10px] font-bold mb-10 shadow-sm mx-auto">
+    <main class="flex-grow flex flex-col items-center justify-center text-center px-4 z-10 py-24 w-full max-w-screen-xl mx-auto">
+        <div class="badge-pill px-5 py-2 rounded-full text-[11px] font-semibold mb-12 uppercase tracking-widest shadow-lg">
             Launching Soon
         </div>
 
-        <!-- Heading centered with font-normal to unbold -->
-        <h1 class="text-5xl md:text-7xl font-normal tracking-tight mb-8 leading-tight text-white max-w-4xl mx-auto">
+        <h1 class="text-6xl md:text-8xl font-normal tracking-tight mb-8 leading-tight text-white max-w-5xl mx-auto">
             Join the Waitlist
         </h1>
 
-        <p class="text-gray-400 max-w-2xl text-lg md:text-xl leading-relaxed font-semibold mb-14 opacity-90 mx-auto">
+        <p class="text-gray-400 max-w-2xl text-lg md:text-xl leading-relaxed mb-16 opacity-80 mx-auto font-medium">
             Be first to try the AI-agent template, get launch updates, private previews, and early-bird pricing.
         </p>
 
-        <!-- Removed Timer Has Ended Section -->
-
-        <div class="w-full max-w-lg mb-10 mx-auto">
-            <div class="input-container p-1.5 flex items-center shadow-2xl">
+        <div class="w-full max-w-xl mb-12 mx-auto">
+            <div class="input-container p-2 flex items-center shadow-2xl">
                 <input 
                     type="email" 
                     placeholder="Your email address" 
-                    class="bg-transparent border-none outline-none flex-grow px-6 py-3 text-white placeholder-gray-500 font-medium"
+                    class="bg-transparent border-none outline-none flex-grow px-6 py-3 text-white placeholder-gray-500 text-base"
                 >
-                <div class="btn-input-glow-container cursor-pointer">
-                    <div class="btn-input-glow-inner">Join Waitlist</div>
-                </div>
+                <button class="btn-glow">
+                    <span class="btn-glow-inner text-sm font-semibold">Join Waitlist</span>
+                </button>
             </div>
         </div>
 
-        <div class="flex items-center justify-center gap-3 mx-auto">
+        <div class="flex items-center justify-center gap-4 mx-auto">
             <div class="flex -space-x-3">
-                <img src="https://i.pravatar.cc/100?u=a" alt="User" class="w-9 h-9 rounded-full border-2 border-black grayscale hover:grayscale-0 cursor-pointer">
-                <img src="https://i.pravatar.cc/100?u=b" alt="User" class="w-9 h-9 rounded-full border-2 border-black grayscale hover:grayscale-0 cursor-pointer">
-                <img src="https://i.pravatar.cc/100?u=c" alt="User" class="w-9 h-9 rounded-full border-2 border-black grayscale hover:grayscale-0 cursor-pointer">
+                <img src="https://i.pravatar.cc/100?u=1" alt="User" class="w-10 h-10 rounded-full border-2 border-black object-cover">
+                <img src="https://i.pravatar.cc/100?u=2" alt="User" class="w-10 h-10 rounded-full border-2 border-black object-cover">
+                <img src="https://i.pravatar.cc/100?u=3" alt="User" class="w-10 h-10 rounded-full border-2 border-black object-cover">
             </div>
-            <p class="text-gray-400 text-[15px] font-bold">
-                <span class="text-white">2,300+</span> Peoples already joined
+            <p class="text-gray-400 text-[15px] font-medium">
+                <span class="text-white font-bold">2,300+</span> Peoples already joined
             </p>
         </div>
     </main>
 
-    <footer class="mb-10 text-center text-gray-500 text-[11px] font-bold uppercase tracking-[0.3em] z-10 w-full mx-auto">
-        &copy; 2024 Fusion AI &bull; Autonomous Intelligence
+    <!-- Detailed Footer (Matching Screenshot) -->
+    <footer class="w-full px-4 pb-12 z-10">
+        <div class="max-w-6xl mx-auto footer-glass p-10 md:p-16">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+                <!-- Branding Column -->
+                <div class="md:col-span-5">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center">
+                            <i data-lucide="zap" class="text-blue-400 w-6 h-6"></i>
+                        </div>
+                        <span class="text-2xl font-bold text-white">Fusion AI</span>
+                    </div>
+                    <p class="text-gray-400 text-lg leading-relaxed max-w-xs">
+                        Fusion AI and let AI handle your routine tasks.
+                    </p>
+                </div>
+
+                <!-- Main Page Column -->
+                <div class="md:col-span-2">
+                    <h4 class="text-white font-semibold mb-6">Main Page</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Blogs</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="md:col-span-2">
+                    <h4 class="text-white font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Integration</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Teams</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Career</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">404</a></li>
+                    </ul>
+                </div>
+
+                <!-- Others Column -->
+                <div class="md:col-span-3">
+                    <h4 class="text-white font-semibold mb-6">Others</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms & Condition</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Waitlist</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Changelog</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="pt-10 border-t border-white/5 flex flex-col md:row justify-between items-center gap-6">
+                <p class="text-gray-500 text-sm">
+                    &copy; 2025 Design & Developed by Amani Design
+                </p>
+                <div class="flex items-center gap-6 text-gray-400">
+                    <a href="#" class="social-link transition-all"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                    <a href="#" class="social-link transition-all"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="#" class="social-link transition-all"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="social-link transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -242,8 +263,8 @@
         
         // Mouse movement parallax for ambient glows
         document.addEventListener('mousemove', (e) => {
-            const x = (e.clientX / window.innerWidth - 0.5) * 20; 
-            const y = (e.clientY / window.innerHeight - 0.5) * 20; 
+            const x = (e.clientX / window.innerWidth - 0.5) * 30; 
+            const y = (e.clientY / window.innerHeight - 0.5) * 30; 
             const orange = document.querySelector('.glow-orange');
             const blue = document.querySelector('.glow-blue');
             if (orange) orange.style.transform = `translate(${x}px, ${y}px)`;
