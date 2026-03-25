@@ -1,1 +1,256 @@
-index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fusion AI - Join the Waitlist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* --- AMBIENT GLOWS (Dark Theme Colors) --- */
+        .glow-orange {
+            position: absolute;
+            bottom: -10%;
+            left: -10%;
+            width: 60vw;
+            height: 60vh;
+            background: radial-gradient(circle at center, rgba(194, 65, 12, 0.35) 0%, rgba(0,0,0,0) 70%);
+            filter: blur(100px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .glow-blue {
+            position: absolute;
+            bottom: -15%;
+            right: -10%;
+            width: 70vw;
+            height: 70vh;
+            background: radial-gradient(circle at center, rgba(29, 78, 216, 0.4) 0%, rgba(0,0,0,0) 70%);
+            filter: blur(120px);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Glassmorphism Navigation (Dark Theme) */
+        .nav-glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Glowing Button Border Effect with Rotating Shine */
+        .btn-glow {
+            position: relative;
+            background: #000;
+            border-radius: 9999px;
+            padding: 1.5px;
+            display: inline-block;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .btn-glow-inner {
+            background: #000;
+            border-radius: 9999px;
+            padding: 8px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn-glow::before {
+            content: '';
+            position: absolute;
+            inset: -150%; 
+            background: conic-gradient(
+                from 0deg, 
+                transparent 20%, 
+                #f97316 45%, 
+                #3b82f6 55%, 
+                transparent 80%
+            );
+            animation: spin 3s linear infinite;
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        /* Waitlist Button Style */
+        .btn-input-glow-container {
+            position: relative;
+            display: inline-block;
+            padding: 1.5px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #000;
+            transition: all 0.3s ease;
+        }
+
+        .btn-input-glow-container::before {
+            content: '';
+            position: absolute;
+            inset: -150%;
+            background: conic-gradient(
+                from 0deg,
+                transparent 20%,
+                #f97316 45%,
+                #3b82f6 55%,
+                transparent 80%
+            );
+            animation: spin 3s linear infinite;
+            z-index: 1;
+        }
+
+        .btn-input-glow-inner {
+            position: relative;
+            z-index: 2;
+            background: #000;
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 11px;
+            font-size: 14px;
+            font-weight: 500;
+            display: block;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: background 0.3s ease;
+        }
+
+        .btn-input-glow-container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+        }
+
+        /* Input Container (Dark Theme) */
+        .input-container {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .badge-pill {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.03);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col relative">
+
+    <!-- Ambient Glows -->
+    <div class="glow-orange"></div>
+    <div class="glow-blue"></div>
+
+    <!-- Navigation Menu -->
+    <header class="w-full flex justify-center pt-8 px-4 z-20">
+        <nav class="nav-glass px-8 py-2.5 rounded-full flex items-center justify-between w-full max-w-6xl mx-auto">
+            <div class="flex items-center gap-3 cursor-pointer group">
+                <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center group-hover:rotate-[360deg] transition-transform duration-700">
+                    <i data-lucide="asterisk" class="text-black w-5 h-5"></i>
+                </div>
+                <span class="text-2xl font-bold tracking-tight text-white">Fusion AI</span>
+            </div>
+
+            <div class="hidden md:flex items-center gap-10 text-[13px] text-gray-400 font-bold uppercase tracking-wider">
+                <a href="#" class="hover:text-white transition-all">About us</a>
+                <a href="#" class="hover:text-white transition-all">Pricing</a>
+                <a href="#" class="hover:text-white transition-all">Integration</a>
+                <a href="#" class="hover:text-white transition-all">Blog</a>
+                <a href="#" class="hover:text-white transition-all">Contact</a>
+            </div>
+
+            <div class="cursor-pointer group">
+                <div class="btn-glow">
+                    <div class="btn-glow-inner text-sm font-bold uppercase tracking-wide">Sign in</div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col items-center justify-center text-center px-4 z-10 py-20 w-full max-w-screen-xl mx-auto">
+        <div class="badge-pill px-4 py-1.5 rounded-full text-[10px] font-bold mb-10 shadow-sm mx-auto">
+            Launching Soon
+        </div>
+
+        <!-- Heading centered with smaller size fixed -->
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-tight text-white max-w-4xl mx-auto">
+            Join the Waitlist
+        </h1>
+
+        <p class="text-gray-400 max-w-2xl text-lg md:text-xl leading-relaxed font-semibold mb-14 opacity-90 mx-auto">
+            Be first to try the AI-agent template, get launch updates, private previews, and early-bird pricing.
+        </p>
+
+        <div class="text-3xl md:text-[40px] font-light mb-16 tracking-tight text-white mx-auto">
+            Timer Has Ended
+        </div>
+
+        <div class="w-full max-w-lg mb-10 mx-auto">
+            <div class="input-container p-1.5 flex items-center shadow-2xl">
+                <input 
+                    type="email" 
+                    placeholder="Your email address" 
+                    class="bg-transparent border-none outline-none flex-grow px-6 py-3 text-white placeholder-gray-500 font-medium"
+                >
+                <div class="btn-input-glow-container cursor-pointer">
+                    <div class="btn-input-glow-inner">Join Waitlist</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-center gap-3 mx-auto">
+            <div class="flex -space-x-3">
+                <img src="https://i.pravatar.cc/100?u=a" alt="User" class="w-9 h-9 rounded-full border-2 border-black grayscale hover:grayscale-0 cursor-pointer">
+                <img src="https://i.pravatar.cc/100?u=b" alt="User" class="w-9 h-9 rounded-full border-2 border-black grayscale hover:grayscale-0 cursor-pointer">
+                <img src="https://i.pravatar.cc/100?u=c" alt="User" class="w-9 h-9 rounded-full border-2 border-black grayscale hover:grayscale-0 cursor-pointer">
+            </div>
+            <p class="text-gray-400 text-[15px] font-bold">
+                <span class="text-white">2,300+</span> Peoples already joined
+            </p>
+        </div>
+    </main>
+
+    <footer class="mb-10 text-center text-gray-500 text-[11px] font-bold uppercase tracking-[0.3em] z-10 w-full mx-auto">
+        &copy; 2024 Fusion AI &bull; Autonomous Intelligence
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        
+        // Mouse movement parallax for ambient glows
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 20; 
+            const y = (e.clientY / window.innerHeight - 0.5) * 20; 
+            const orange = document.querySelector('.glow-orange');
+            const blue = document.querySelector('.glow-blue');
+            if (orange) orange.style.transform = `translate(${x}px, ${y}px)`;
+            if (blue) blue.style.transform = `translate(${-x}px, ${-y}px)`;
+        });
+    </script>
+</body>
+</html>
