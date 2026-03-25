@@ -17,14 +17,14 @@
             min-height: 100vh;
         }
 
-        /* --- UPDATED AMBIENT GLOWS (Matching Screenshots) --- */
+        /* --- DARKER AMBIENT GLOWS --- */
         .glow-orange {
             position: fixed;
             bottom: -20%;
             left: -15%;
             width: 70vw;
             height: 70vh;
-            background: radial-gradient(circle at center, rgba(255, 69, 0, 0.25) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle at center, rgba(153, 27, 27, 0.35) 0%, rgba(0,0,0,0) 70%);
             filter: blur(120px);
             z-index: 0;
             pointer-events: none;
@@ -36,7 +36,7 @@
             right: -15%;
             width: 70vw;
             height: 70vh;
-            background: radial-gradient(circle at center, rgba(0, 102, 255, 0.3) 0%, rgba(0,0,0,0) 70%);
+            background: radial-gradient(circle at center, rgba(30, 58, 138, 0.4) 0%, rgba(0,0,0,0) 70%);
             filter: blur(120px);
             z-index: 0;
             pointer-events: none;
@@ -51,9 +51,9 @@
 
         /* Footer Glass Styling */
         .footer-glass {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(255, 255, 255, 0.01);
             backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 32px;
         }
 
@@ -77,10 +77,11 @@
             content: '';
             position: absolute;
             inset: -150%; 
-            background: conic-gradient(from 0deg, transparent 20%, #ff4500 45%, #0066ff 55%, transparent 80%);
+            /* Darker Red and Blue for the rotating border */
+            background: conic-gradient(from 0deg, transparent 20%, #991b1b 45%, #1e3a8a 55%, transparent 80%);
             animation: spin 4s linear infinite;
             z-index: 1;
-            opacity: 0.6;
+            opacity: 0.8;
         }
 
         .btn-glow-inner {
@@ -104,7 +105,7 @@
 
         /* Input Styling */
         .input-container {
-            background: rgba(255, 255, 255, 0.03);
+            background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 18px;
         }
@@ -126,7 +127,7 @@
     <header class="w-full flex justify-center pt-8 px-4 z-20">
         <nav class="nav-glass px-8 py-3 rounded-full flex items-center justify-between w-full max-w-6xl mx-auto border-white/10">
             <div class="flex items-center gap-3 cursor-pointer group">
-                <div class="w-9 h-9 bg-gradient-to-br from-blue-500 to-orange-500 rounded-full flex items-center justify-center p-0.5">
+                <div class="w-9 h-9 bg-gradient-to-br from-blue-800 to-red-900 rounded-full flex items-center justify-center p-0.5">
                     <div class="w-full h-full bg-black rounded-full flex items-center justify-center">
                         <i data-lucide="zap" class="text-white w-5 h-5"></i>
                     </div>
@@ -197,8 +198,8 @@
                 <!-- Branding Column -->
                 <div class="md:col-span-5">
                     <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 bg-blue-500/20 rounded-full flex items-center justify-center">
-                            <i data-lucide="zap" class="text-blue-400 w-6 h-6"></i>
+                        <div class="w-10 h-10 bg-blue-900/30 rounded-full flex items-center justify-center">
+                            <i data-lucide="zap" class="text-blue-500 w-6 h-6"></i>
                         </div>
                         <span class="text-2xl font-bold text-white">Fusion AI</span>
                     </div>
@@ -244,7 +245,7 @@
             </div>
 
             <!-- Bottom Bar -->
-            <div class="pt-10 border-t border-white/5 flex flex-col md:row justify-between items-center gap-6">
+            <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
                 <p class="text-gray-500 text-sm">
                     &copy; 2025 Design & Developed by Amani Design
                 </p>
